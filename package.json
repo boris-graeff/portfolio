@@ -4,7 +4,9 @@
   "version": "1.0.0",
   "author": "Boris Graeff <boris.graeff@gmail.com>",
   "private": true,
-  "dependencies": {},
+  "dependencies": {
+    "express": "3.x"
+  },
   "devDependencies": {
     "browserify": "^14.3.0",
     "gulp": "^3.9.1",
