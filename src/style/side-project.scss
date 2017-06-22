@@ -1,0 +1,23 @@
+.side-project {
+  .links {
+    li + li {
+      margin-top: $space-small;
+    }
+  }
+
+  .gallery {
+    display: flex;
+    margin: $space-big (-$space-small) 0;
+    line-height: 0;
+
+    li {
+      margin: $space-small;
+    }
+
+    img {
+      width: 100%;
+      max-height: 392px;
+    }
+  }
+
+}

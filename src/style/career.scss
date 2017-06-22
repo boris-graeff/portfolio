@@ -1,0 +1,25 @@
+.career {
+  .xp-category {
+    padding: $space-medium 0;
+  }
+
+  .xp {
+    > div:first-child {
+      margin-bottom: $space-medium;
+      display: flex;
+      align-items: center;
+      fill: grey;
+    }
+
+    svg {
+      min-width: 4rem;
+      max-width: 4rem;
+      height: 4rem;
+      margin-right: $space-small;
+    }
+
+    + .xp {
+      margin-top: $space-big;
+    }
+  }
+}

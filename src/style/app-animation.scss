@@ -1,0 +1,93 @@
+.app-animation {
+  backface-visibility: hidden;
+
+  .page-1 {
+    animation: app-animation-page-1 6000ms ease-in-out infinite;
+  }
+
+  .page-2 {
+    animation: app-animation-page-2 6000ms ease-in-out infinite;
+  }
+
+  .menu {
+    transform: translateY(-100%);
+    animation: app-animation-menu 6000ms ease-in-out infinite;
+
+    g path {
+      animation: app-animation-menu-item 6000ms ease-in-out infinite;
+
+      &:nth-child(2) {
+        animation-delay: 100ms;
+      }
+      &:nth-child(3) {
+        animation-delay: 200ms;
+      }
+    }
+  }
+
+  .donut {
+    transform-origin: center center;
+    animation: app-animation-donut 6000ms ease-in-out infinite;
+  }
+
+  @keyframes app-animation-menu {
+    0%, 56%, 100% {
+      transform: translateY(-100%);
+    }
+    66%, 90% {
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes app-animation-menu-item {
+    0%, 60% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    64%, 100% {
+      transform: translateX(0%);
+      opacity: 0.4;
+    }
+  }
+
+  @keyframes app-animation-page-1 {
+    0%, 23%, 100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    33%, 66%, 88% {
+      transform: translateX(-50%);
+      opacity: 0;
+    }
+  }
+
+  @keyframes app-animation-page-2 {
+    0%, 23% {
+      transform: translateX(100%);
+      opacity: 1;
+      fill: #e3dbdb;
+    }
+    33%, 66% {
+      transform: translateX(0%);
+    }
+    40% {
+      fill: white;
+    }
+    55% {
+      fill: white;
+      opacity: 1;
+    }
+    68%, 100% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes app-animation-donut {
+    0%, 23% {
+      transform: scale(0) rotate(-360deg);
+    }
+    38%, 100% {
+      transform: scale(1) rotate(0deg);
+    }
+  }
+}

@@ -1,0 +1,21 @@
+.skills {
+  .kinds > li {
+    display: flex;
+    align-items: center;
+    padding: $space-big 0;
+
+    > div {
+      width: 100%;
+    }
+  }
+
+  @media screen and (max-width: 740px){
+    .kinds > li {
+      flex-direction: column;
+
+      &:first-child > div:first-child {
+        order: 2;
+      }
+    }
+  }
+}

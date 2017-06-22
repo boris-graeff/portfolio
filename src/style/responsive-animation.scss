@@ -1,0 +1,217 @@
+$device: #666;
+$header: #ccc;
+$content: #e3dbdb;
+
+$duration: 6000ms;
+
+.responsive-animation {
+  backface-visibility: hidden;
+
+  .device {
+    width: 110px;
+    background-color: $device;
+    border-radius: 6px;
+    position: relative;
+    overflow: hidden;
+    animation: responsive-animation-device $duration ease-in-out infinite;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border: 4px solid $device;
+      border-radius: 6px;
+      z-index: 1;
+    }
+  }
+
+  .device-button {
+    position: absolute;
+    border-radius: 8px;
+    animation: responsive-animation-device-button $duration ease-in-out infinite;
+  }
+
+  .main {
+    height: 150px;
+    background-color: white;
+    display: flex;
+    padding: 4px;
+    overflow: hidden;
+
+    .sidebar {
+      width: 25%;
+      background-color: $content;
+      margin-right: 4px;
+      animation: responsive-animation-sidebar $duration ease-in-out infinite;
+    }
+
+    .content {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      animation: responsive-animation-content $duration ease-in-out infinite;
+      margin: -2px;
+
+      li {
+        background-color: $content;
+        height: 20%;
+        width: 100%;
+        margin: 2px;
+      }
+
+      .bloc {
+        animation: responsive-animation-bloc $duration ease-in-out infinite;
+      }
+    }
+  }
+
+  .header {
+    background-color: $header;
+    height: 22px;
+    position: relative;
+
+    .menu {
+      position: absolute;
+      overflow: hidden;
+      width: 14px;
+      right: 4px;
+      top: 4px;
+      animation: responsive-animation-menu 6000ms ease-in-out infinite;
+
+      li {
+        font-size: 0;
+        background-color: gray;
+        height: 2px;
+        width: 100%;
+        margin: 2px;
+        flex-basis: 100%;
+      }
+    }
+  }
+
+  @keyframes responsive-animation-bloc {
+    0%,
+    56%,
+    100% {
+      flex-basis: 100%;
+    }
+    66%,
+    90% {
+      flex-basis: 31%;
+    }
+  }
+
+  @keyframes responsive-animation-content {
+    0%,
+    23%,
+    100% {
+      height: 125%;
+    }
+    33%,
+    56% {
+      height: 125%;
+    }
+    66%,
+    90% {
+      height: 225%;
+    }
+  }
+
+  @keyframes responsive-animation-sidebar {
+    0%,
+    23%,
+    100% {
+      width: 0;
+      margin-left: 0;
+    }
+    33%,
+    90% {
+      width: 25%;
+      margin-left: 4px;
+    }
+  }
+
+  @keyframes responsive-animation-menu {
+    0%,
+    56%,
+    100% {
+      width: 14px;
+    }
+    66%,
+    90% {
+      width: 0;
+    }
+  }
+
+  @keyframes responsive-animation-device-button {
+    0%,
+    23%,
+    100% {
+      bottom: 4px;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 7px;
+      width: 10px;
+      border: 2px solid white;
+      background: transparent;
+      box-shadow: none;
+      opacity: 1;
+    }
+    33%,
+    56% {
+      left: 100%;
+      transform: translateY(-50%) translateX(-10px);
+      bottom: 50%;
+      height: 6px;
+      width: 6px;
+      border: none;
+      background: white;
+      box-shadow: none;
+      opacity: 1;
+    }
+    66%,
+    90% {
+      left: 6px;
+      bottom: 100%;
+      transform: translateY(9px);
+      border: none;
+      width: 5px;
+      height: 5px;
+      opacity: 1;
+      background: white;
+      box-shadow: 8px 0 0 rgba(255, 255, 255, .8), 16px 0 0 rgba(255, 255, 255, .8);
+    }
+    25%, 28%, 60%, 63%, 96%, 99% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes responsive-animation-device {
+    0%,
+    23%,
+    100% {
+      padding-top: 12px;
+      padding-bottom: 16px;
+      padding-right: 4px;
+      width: 110px;
+    }
+    33%,
+    56% {
+      padding-top: 4px;
+      padding-right: 14px;
+      padding-bottom: 4px;
+      width: 200px;
+    }
+    66%,
+    90% {
+      padding-top: 14px;
+      padding-right: 8px;
+      padding-bottom: 12px;
+      width: 240px;
+    }
+  }
+}
