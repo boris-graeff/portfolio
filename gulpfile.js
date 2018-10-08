@@ -84,3 +84,5 @@ gulp.task('copy', function() {
 /* DEFAULT */
 
 gulp.task('default', ['copy', 'template', 'watch', 'style', 'connect']);
+
+gulp.task('build', ['copy', 'template', 'style']);
